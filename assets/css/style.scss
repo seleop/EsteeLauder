@@ -1,0 +1,269 @@
+@import "./variables";
+@import "./font-face";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+header{
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    padding: 0 100px;
+    background-color: transparent;
+    border-bottom: 1px solid $estee-lauder--color-lightgray;
+    font-family: "pretendard";
+    color: $estee-lauder--color-white;
+    .header_inner {
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .logo {
+            width: 307px;
+            height: 38px;
+            svg {
+                width: 100%;
+                height: 100%;
+                fill : $estee-lauder--color-white;
+            }
+        }
+        nav {
+            ul {
+                display: flex;
+                gap: 45px;
+                li {
+                    font-weight: 600;
+                    font-size: 16px;
+                }
+            }
+        }
+        .user_panel {
+            display: flex;
+            gap: 20px;
+            span {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+.section1 {
+    width: 100%;
+    height: 960px;
+    position: relative;
+    .videosection_text{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 10%;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        color: $estee-lauder--color-white;
+        font-family: "pretendard";
+        text-shadow: 0 0 5px #000;
+        p:first-child{
+            font-size: 16px;
+            font-weight: 600;
+        }
+        p:last-child{
+            font-size: 20px;
+            line-height: 32px;
+        }
+        .videosection_svg{
+            margin-bottom: 15px;
+            svg {
+                fill: $estee-lauder--color-white;
+            }
+        }
+    }
+    video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+}
+
+.section2 {
+    padding: 160px 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+    .holiday_blockbuster {
+        position: relative;
+        .holiday_inner{
+            position: absolute; 
+            top: 40%; 
+            right: 5%;
+            font-family: "pretendard";
+            color: $estee-lauder--color-white;
+            button {
+                margin: 30px auto 0 auto;
+                width: 135px;
+                height: 56px;
+                border: none;
+                cursor: pointer;
+                color: $estee-lauder--color-white;
+                background-color: $estee-lauder--color-blue;
+            }
+            .holiday_textwrap{
+                display: flex;
+                flex-direction: column;
+                gap: 40px;
+                h2 {font-size: 38px; font-weight: bold;}
+                .holiday_textwrap_sub{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    span {font-size: 20px; font-weight: 200; letter-spacing: 2px; color: $estee-lauder--color-white; text-align: center;}
+                }
+            }}
+        .holiday_imgwrap{width: 100%; height: 100%;
+            img {width: 100%; height: 100%; object-fit: cover;
+            }
+        }
+    }
+    .promotion15{
+        display: flex;
+        gap: 50px;
+        position: relative;
+        .promotion15_deco_box {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 70px;
+            height: 70px;
+            background-color: $estee-lauder--color-red;
+        }
+        .promotion15_deco_box2{
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 30px;
+            height: 300px;
+            background-color: $estee-lauder--color-red;
+        }
+        .promotion15_inner{
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            .promotion15_titles {
+                display: flex;
+                flex-direction: column;
+                span {
+                    font-size: 160px;
+                    line-height: 160px;
+                    letter-spacing: 5px;
+                    font-family: "optima";
+                    color: $estee-lauder--color-red;
+                }
+            }
+            .promotion15_contexts {
+                line-height: 40px;
+                letter-spacing: 3px;
+                font-size: 18px;
+                font-family: "pretendard";
+                font-weight: 200;
+                p {
+                    display: inline;
+                }
+                span {
+                    color: $estee-lauder--color-red;
+                    font-weight: 500;
+                }
+            }
+            button {
+                width: 140px;
+                height: 57px;
+                margin-top: 50px;
+                color: $estee-lauder--color-white;
+                background-color: $estee-lauder--color-blue;
+                border: none;
+                cursor: pointer;
+            }
+        }
+        .promotion15_imgwrap{
+            width: 50%;
+            height: 960px;
+            img {width: 100%; height: 100%; object-fit: cover; }
+        }
+    }
+}
+
+.section3 {
+    background-color: $estee-lauder--color-black;
+    .bestseller_container{
+        display: flex;
+        height: auto;
+        .bestseller_stickyway{
+            width: 50%;
+            position: relative;
+            .bestseller_imgwrap{
+                width: 100%;
+                top: -110px;
+                position: sticky;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+        .bestseller_innerwrap{
+            width: 50%;
+            color: $estee-lauder--color-white;
+            .bestseller_inner1{
+                padding: 340px 0;
+                .bestseller_inner1_context{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 50px;
+                    text-align: center;
+                    .bestseller_pricespan{
+                        margin-top: 10px;
+                        display: flex;
+                        gap: 15px;
+                        justify-content: center;
+                        align-items: center;
+                        span {font-family: "rora"; font-size: 16px; letter-spacing: 0; cursor: pointer;
+                        &.active {
+                            font-size: 18px;
+                            font-weight: bold;
+                        }}
+                    }
+                    h2 {font-family: "cinzel"; font-size: 22px; font-weight: bold; letter-spacing: 14px;}
+                    h3 {font-family: "rora"; font-size: 48px; letter-spacing: 10px; font-weight: 200;}
+                    span {font-family: "rora"; font-size: 24px; letter-spacing: 8px; font-weight: 200; margin-top: 50px;}
+                    a {margin-top: 50px;}
+                }
+            }
+            .bestseller_inner2{
+                margin-top: 500px;
+                padding: 460px 0;
+                .bestseller_inner2_context{
+                    text-align: center;
+                }
+            }   
+        }
+    }
+}
