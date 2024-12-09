@@ -21,7 +21,7 @@ body {
     overflow-x: hidden;
 }
 
-header{
+header {
     width: 100%;
     height: 100px;
     position: fixed;
@@ -43,7 +43,7 @@ header{
             svg {
                 width: 100%;
                 height: 100%;
-                fill : $estee-lauder--color-white;
+                fill: $estee-lauder--color-white;
             }
         }
         nav {
@@ -70,7 +70,7 @@ header{
     width: 100%;
     height: 960px;
     position: relative;
-    .videosection_text{
+    .videosection_text {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
@@ -81,15 +81,15 @@ header{
         color: $estee-lauder--color-white;
         font-family: "pretendard";
         text-shadow: 0 0 5px #000;
-        p:first-child{
+        p:first-child {
             font-size: 16px;
             font-weight: 600;
         }
-        p:last-child{
+        p:last-child {
             font-size: 20px;
             line-height: 32px;
         }
-        .videosection_svg{
+        .videosection_svg {
             margin-bottom: 15px;
             svg {
                 fill: $estee-lauder--color-white;
@@ -101,7 +101,6 @@ header{
         height: 100%;
         object-fit: cover;
     }
-
 }
 
 .section2 {
@@ -111,9 +110,9 @@ header{
     gap: 70px;
     .holiday_blockbuster {
         position: relative;
-        .holiday_inner{
-            position: absolute; 
-            top: 40%; 
+        .holiday_inner {
+            position: absolute;
+            top: 40%;
             right: 5%;
             font-family: "pretendard";
             color: $estee-lauder--color-white;
@@ -126,24 +125,39 @@ header{
                 color: $estee-lauder--color-white;
                 background-color: $estee-lauder--color-blue;
             }
-            .holiday_textwrap{
+            .holiday_textwrap {
                 display: flex;
                 flex-direction: column;
                 gap: 40px;
-                h2 {font-size: 38px; font-weight: bold;}
-                .holiday_textwrap_sub{
+                h2 {
+                    font-size: 38px;
+                    font-weight: bold;
+                }
+                .holiday_textwrap_sub {
                     display: flex;
                     flex-direction: column;
                     gap: 10px;
-                    span {font-size: 20px; font-weight: 200; letter-spacing: 2px; color: $estee-lauder--color-white; text-align: center;}
+                    span {
+                        font-size: 20px;
+                        font-weight: 200;
+                        letter-spacing: 2px;
+                        color: $estee-lauder--color-white;
+                        text-align: center;
+                    }
                 }
-            }}
-        .holiday_imgwrap{width: 100%; height: 100%;
-            img {width: 100%; height: 100%; object-fit: cover;
+            }
+        }
+        .holiday_imgwrap {
+            width: 100%;
+            height: 100%;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
             }
         }
     }
-    .promotion15{
+    .promotion15 {
         display: flex;
         gap: 50px;
         position: relative;
@@ -155,7 +169,7 @@ header{
             height: 70px;
             background-color: $estee-lauder--color-red;
         }
-        .promotion15_deco_box2{
+        .promotion15_deco_box2 {
             position: absolute;
             right: 0;
             top: 0;
@@ -163,7 +177,7 @@ header{
             height: 300px;
             background-color: $estee-lauder--color-red;
         }
-        .promotion15_inner{
+        .promotion15_inner {
             display: flex;
             flex-direction: column;
             gap: 50px;
@@ -202,68 +216,200 @@ header{
                 cursor: pointer;
             }
         }
-        .promotion15_imgwrap{
+        .promotion15_imgwrap {
             width: 50%;
             height: 960px;
-            img {width: 100%; height: 100%; object-fit: cover; }
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
         }
     }
 }
 
 .section3 {
     background-color: $estee-lauder--color-black;
-    .bestseller_container{
+    .bestseller_container {
         display: flex;
         height: auto;
-        .bestseller_stickyway{
+        .bestseller_stickyway {
             width: 50%;
             position: relative;
-            .bestseller_imgwrap{
+            .bestseller_img {
                 width: 100%;
                 top: -110px;
                 position: sticky;
-                img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
+                .bestseller_imgwrap {
+                    position: relative;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                    #perfume {
+                        position: absolute;
+                        bottom: 5%;
+                        left: 50%;
+                        width: 20%;
+                        height: 30%;
+                        object-fit: cover;
+                        transform: rotate(-15deg);
+                    }
                 }
             }
         }
-        .bestseller_innerwrap{
+        .bestseller_innerwrap {
             width: 50%;
             color: $estee-lauder--color-white;
-            .bestseller_inner1{
+            .bestseller_inner1 {
                 padding: 340px 0;
-                .bestseller_inner1_context{
+                .bestseller_inner1_context {
                     display: flex;
                     flex-direction: column;
                     gap: 50px;
                     text-align: center;
-                    .bestseller_pricespan{
+                    .bestseller_pricespan {
                         margin-top: 10px;
                         display: flex;
                         gap: 15px;
                         justify-content: center;
                         align-items: center;
-                        span {font-family: "rora"; font-size: 16px; letter-spacing: 0; cursor: pointer;
-                        &.active {
-                            font-size: 18px;
-                            font-weight: bold;
-                        }}
+                        span {
+                            font-family: "rora";
+                            font-size: 16px;
+                            letter-spacing: 0;
+                            cursor: pointer;
+                            &.active {
+                                font-size: 18px;
+                                font-weight: bold;
+                            }
+                        }
                     }
-                    h2 {font-family: "cinzel"; font-size: 22px; font-weight: bold; letter-spacing: 14px;}
-                    h3 {font-family: "rora"; font-size: 48px; letter-spacing: 10px; font-weight: 200;}
-                    span {font-family: "rora"; font-size: 24px; letter-spacing: 8px; font-weight: 200; margin-top: 50px;}
-                    a {margin-top: 50px;}
+                    h2 {
+                        font-family: "cinzel";
+                        font-size: 22px;
+                        font-weight: bold;
+                        letter-spacing: 14px;
+                    }
+                    h3 {
+                        font-family: "rora";
+                        font-size: 48px;
+                        letter-spacing: 10px;
+                        font-weight: 200;
+                    }
+                    span {
+                        font-family: "rora";
+                        font-size: 24px;
+                        letter-spacing: 8px;
+                        font-weight: 200;
+                        margin-top: 50px;
+                    }
+                    a {
+                        margin-top: 50px;
+                    }
                 }
             }
-            .bestseller_inner2{
-                margin-top: 500px;
-                padding: 460px 0;
-                .bestseller_inner2_context{
+            .bestseller_inner2 {
+                margin-top: 300px;
+                padding: 380px 0;
+                .bestseller_inner2_context {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
                     text-align: center;
+                    font-family: "pretendard";
+                    .bestseller_inner2_pwrap {
+                        margin-top: 40px;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 20px;
+                        justify-content: center;
+                        align-content: center;
+                        p {
+                            font-size: 20px;
+                            line-height: 26px;
+                        }
+                    }
+                    h2 {
+                        font-size: 18px;
+                        font-weight: 300;
+                        letter-spacing: 3px;
+                    }
+                    h3 {
+                        font-size: 54px;
+                        font-weight: 500;
+                        letter-spacing: 8px;
+                    }
                 }
-            }   
+            }
+        }
+    }
+}
+
+.section4 {
+    padding: 210px 200px;
+    .section4_gridcontainer{
+        width: 100%;
+        height: 920px;
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(30, 1fr);
+        grid-template-rows: repeat(20, 1fr);
+        .section4_item_bgr{
+            width: 100%;
+            height: 100%;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .section4_main{
+            grid-column: 1 / 15;
+            grid-row: 1 / 12;
+            position: relative;
+            .section4_main_textwrap{
+                position: absolute;
+                top: 70px;
+                left: 30px;
+                color: $estee-lauder--color-white;
+                h2 {font-family: "optima"; font-size: 100px; font-weight: 200;}
+                p {font-family: "pretendard"; font-size: 18px; line-height: 40px; font-weight: 200;margin: 20px 0 0 5px; letter-spacing: 2px;}
+            }
+        }
+        .section4_item1{
+            grid-column: 15 / 24;
+            grid-row: 1 / 11;
+        }
+        .section4_item2{
+            grid-column: 24 / 30;
+            grid-row: 1 / 11;
+        }
+        .section4_item3{
+            grid-column: 1 / 9;
+            grid-row: 12 / 20;
+        }
+        .section4_item4{
+            grid-column: 9 / 15;
+            grid-row: 12 / 20;
+        }
+        .section4_item5{
+            grid-column: 15 / 22;
+            grid-row: 11 / 17;
+        }
+        .section4_item6{
+            grid-column: 22 / 30;
+            grid-row: 11 / 20;
+        }
+        button {
+            grid-column: 15 / 22;
+            grid-row: 17 / 20;
+            font-family: "pretendard";
+            font-size: 18px;
+            cursor: pointer;
+            color: $estee-lauder--color-white;
+            background: url(../img/red1.png) no-repeat center / cover;
         }
     }
 }
