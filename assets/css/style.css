@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Rosarivo:ital@0;1&display=swap");
 @font-face {
   font-family: "Monserrat";
   src: url(../font/Montserrat-VariableFont_wght.ttf);
@@ -17,6 +18,18 @@
 @font-face {
   font-family: "rora";
   src: url(../font/Lora-VariableFont_wght.ttf);
+}
+@font-face {
+  font-family: "raleway";
+  src: url(../font/);
+}
+@keyframes linemove {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-4500px);
+  }
 }
 * {
   margin: 0;
@@ -40,15 +53,20 @@ body {
 
 header {
   width: 100%;
-  height: 100px;
+  height: 120px;
   position: fixed;
   top: 0;
   z-index: 1000;
   padding: 0 100px;
   background-color: transparent;
-  border-bottom: 1px solid #B1B1B1;
+  border-bottom: 1px solid #fff;
+  transition: 0.3s;
   font-family: "pretendard";
   color: #fff;
+}
+header.active {
+  background-color: #040A2B;
+  height: 80px;
 }
 header .header_inner {
   height: 100%;
@@ -72,6 +90,24 @@ header .header_inner nav ul {
 header .header_inner nav ul li {
   font-weight: 600;
   font-size: 16px;
+  position: relative;
+}
+header .header_inner nav ul li::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 1px;
+  bottom: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #E8E8E8;
+  transition: 0.3s;
+}
+header .header_inner nav ul li:hover::before {
+  width: 100%;
+}
+header .header_inner nav ul li:hover {
+  color: #E8E8E8;
 }
 header .header_inner .user_panel {
   display: flex;
@@ -139,10 +175,15 @@ header .header_inner .user_panel span {
   margin: 30px auto 0 auto;
   width: 135px;
   height: 56px;
-  border: none;
+  border: 1px solid #040A2B;
   cursor: pointer;
   color: #fff;
   background-color: #040A2B;
+  transition: 0.3s;
+}
+.section2 .holiday_blockbuster .holiday_inner button:hover {
+  background-color: #fff;
+  color: #040A2B;
 }
 .section2 .holiday_blockbuster .holiday_inner .holiday_textwrap {
   display: flex;
@@ -158,7 +199,8 @@ header .header_inner .user_panel span {
   flex-direction: column;
   gap: 10px;
 }
-.section2 .holiday_blockbuster .holiday_inner .holiday_textwrap .holiday_textwrap_sub span {
+.section2 .holiday_blockbuster .holiday_inner .holiday_textwrap .holiday_textwrap_sub p {
+  position: relative;
   font-size: 20px;
   font-weight: 200;
   letter-spacing: 2px;
@@ -192,32 +234,34 @@ header .header_inner .user_panel span {
   position: absolute;
   right: 0;
   top: 0;
-  width: 30px;
-  height: 300px;
+  width: 10px;
+  height: 500px;
   background-color: #AF031D;
 }
 .section2 .promotion15 .promotion15_inner {
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 40px;
 }
 .section2 .promotion15 .promotion15_inner .promotion15_titles {
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 .section2 .promotion15 .promotion15_inner .promotion15_titles span {
-  font-size: 160px;
-  line-height: 160px;
+  font-size: 140px;
+  line-height: 140px;
   letter-spacing: 5px;
-  font-family: "optima";
+  font-family: "Rosarivo";
+  font-weight: 400;
   color: #AF031D;
 }
 .section2 .promotion15 .promotion15_inner .promotion15_contexts {
   line-height: 40px;
-  letter-spacing: 3px;
+  letter-spacing: 1px;
   font-size: 18px;
   font-family: "pretendard";
-  font-weight: 200;
+  font-weight: 300;
 }
 .section2 .promotion15 .promotion15_inner .promotion15_contexts p {
   display: inline;
@@ -229,15 +273,21 @@ header .header_inner .user_panel span {
 .section2 .promotion15 .promotion15_inner button {
   width: 140px;
   height: 57px;
-  margin-top: 50px;
+  margin-top: 80px;
+  border: 1px solid #040A2B;
   color: #fff;
   background-color: #040A2B;
-  border: none;
   cursor: pointer;
+  transition: 0.3s;
+}
+.section2 .promotion15 .promotion15_inner button:hover {
+  background-color: #fff;
+  color: #040A2B;
 }
 .section2 .promotion15 .promotion15_imgwrap {
   width: 50%;
-  height: 960px;
+  height: 900px;
+  overflow: hidden;
 }
 .section2 .promotion15 .promotion15_imgwrap img {
   width: 100%;
@@ -255,6 +305,7 @@ header .header_inner .user_panel span {
 }
 .section3 .bestseller_container .bestseller_stickyway {
   width: 50%;
+  height: 2350px;
   position: relative;
 }
 .section3 .bestseller_container .bestseller_stickyway .bestseller_img {
@@ -273,7 +324,7 @@ header .header_inner .user_panel span {
 }
 .section3 .bestseller_container .bestseller_stickyway .bestseller_img .bestseller_imgwrap #perfume {
   position: absolute;
-  bottom: 5%;
+  bottom: 6%;
   left: 50%;
   width: 20%;
   height: 30%;
@@ -336,6 +387,7 @@ header .header_inner .user_panel span {
 .section3 .bestseller_container .bestseller_innerwrap .bestseller_inner2 {
   margin-top: 300px;
   padding: 380px 0;
+  color: #040404;
 }
 .section3 .bestseller_container .bestseller_innerwrap .bestseller_inner2 .bestseller_inner2_context {
   display: flex;
@@ -366,6 +418,21 @@ header .header_inner .user_panel span {
   font-weight: 500;
   letter-spacing: 8px;
 }
+.section3 .bestseller_container .bestseller_innerwrap .bestseller_inner2 .bestseller_inner2_context button {
+  margin: 70px auto 0 auto;
+  width: 150px;
+  height: 60px;
+  font-family: "pretendard";
+  cursor: pointer;
+  border: 1px solid #040A2B;
+  color: #fff;
+  background-color: #040A2B;
+  transition: 0.3s;
+}
+.section3 .bestseller_container .bestseller_innerwrap .bestseller_inner2 .bestseller_inner2_context button:hover {
+  color: #040A2B;
+  background-color: #fff;
+}
 
 .section4 {
   padding: 210px;
@@ -393,6 +460,10 @@ header .header_inner .user_panel span {
   grid-column: 1/15;
   grid-row: 1/12;
   position: relative;
+  transition: 0.3s;
+}
+.section4 .section4_gridcontainer .section4_main:hover {
+  filter: brightness(1.15);
 }
 .section4 .section4_gridcontainer .section4_main .section4_main_textwrap {
   position: absolute;
@@ -412,6 +483,13 @@ header .header_inner .user_panel span {
   font-weight: 200;
   margin: 20px 0 0 5px;
   letter-spacing: 2px;
+}
+.section4 .section4_gridcontainer .section4_item {
+  transition: 0.3s;
+  cursor: pointer;
+}
+.section4 .section4_gridcontainer .section4_item:hover {
+  filter: brightness(1.05);
 }
 .section4 .section4_gridcontainer .section4_item1 {
   grid-column: 15/24;
@@ -445,24 +523,30 @@ header .header_inner .user_panel span {
   cursor: pointer;
   color: #fff;
   background: url(../img/red1.png) no-repeat center/cover;
+  transition: 0.3s;
+}
+.section4 .section4_gridcontainer button:hover {
+  filter: brightness(1.15);
 }
 
 .centerline {
-  width: 300%;
+  width: 9000px;
   padding: 50px 0;
   background-color: #fff;
   border-top: 1px solid #040A2B;
   border-bottom: 1px solid #040A2B;
   display: flex;
   align-items: center;
+  margin: 200px 0;
 }
 .centerline .linebelt {
   height: auto;
   display: flex;
-  gap: 400px;
   align-items: center;
+  animation: linemove 40s linear infinite;
 }
 .centerline .linebelt svg {
+  margin: 0 200px;
   width: 500px;
   fill: #040A2B;
 }
@@ -476,12 +560,13 @@ header .header_inner .user_panel span {
   padding: 0 150px;
   margin: 0 auto;
   display: flex;
+  justify-content: center;
   position: relative;
 }
 .section5 .section5_container .section5_inner {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 40px;
 }
 .section5 .section5_container .section5_inner .section5_textwrap {
   width: 50%;
@@ -494,14 +579,15 @@ header .header_inner .user_panel span {
 }
 .section5 .section5_container .section5_inner .section5_textwrap .section5_text_top strong {
   font-family: "optima";
-  font-size: 200px;
-  line-height: 180px;
+  font-size: 150px;
+  line-height: 130px;
   font-weight: 200;
 }
 .section5 .section5_container .section5_inner .section5_textwrap .section5_text_top p {
   font-family: "pretendard";
   font-size: 16px;
   font-weight: 300;
+  margin-top: 40px;
 }
 .section5 .section5_container .section5_inner .section5_textwrap .section5_text_bottom h2 {
   font-family: "pretendard";
@@ -515,9 +601,12 @@ header .header_inner .user_panel span {
   margin-top: 15px;
 }
 .section5 .section5_container .section5_inner .section5_img {
-  width: 50%;
+  width: 594px;
+  height: 680px;
+  display: flex;
+  overflow: hidden;
 }
-.section5 .section5_container .section5_inner .section5_img img {
+.section5 .section5_container .section5_inner .section5_img .swiper-wrapper img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -530,8 +619,8 @@ header .header_inner .user_panel span {
 .section5 .section5_container .section5_decobox1 {
   top: 0;
   left: 0;
-  width: 30px;
-  height: 200px;
+  width: 20px;
+  height: 400px;
 }
 .section5 .section5_container .section5_decobox2 {
   top: 0;

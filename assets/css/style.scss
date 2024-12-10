@@ -1,5 +1,6 @@
 @import "./variables";
 @import "./font-face";
+@import "./keyframes";
 
 * {
     margin: 0;
@@ -23,15 +24,20 @@ body {
 
 header {
     width: 100%;
-    height: 100px;
+    height: 120px;
     position: fixed;
     top: 0;
     z-index: 1000;
     padding: 0 100px;
     background-color: transparent;
-    border-bottom: 1px solid $estee-lauder--color-lightgray;
+    border-bottom: 1px solid $estee-lauder--color-white;
+    transition: .3s;
     font-family: "pretendard";
     color: $estee-lauder--color-white;
+    &.active {
+        background-color: $estee-lauder--color-blue;
+        height: 80px;
+    }
     .header_inner {
         height: 100%;
         display: flex;
@@ -53,6 +59,24 @@ header {
                 li {
                     font-weight: 600;
                     font-size: 16px;
+                    position: relative;
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        width: 0%;
+                        height: 1px;
+                        bottom: -3px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        background-color: $estee-lauder--color-superlightgray;
+                        transition: .3s;
+                    }
+                    &:hover::before {
+                        width: 100%;
+                    }
+                    &:hover{
+                        color: $estee-lauder--color-superlightgray;
+                    }
                 }
             }
         }
@@ -120,10 +144,15 @@ header {
                 margin: 30px auto 0 auto;
                 width: 135px;
                 height: 56px;
-                border: none;
+                border: 1px solid $estee-lauder--color-blue;
                 cursor: pointer;
                 color: $estee-lauder--color-white;
                 background-color: $estee-lauder--color-blue;
+                transition: .3s;
+                &:hover{
+                    background-color: $estee-lauder--color-white;
+                    color: $estee-lauder--color-blue;
+                }
             }
             .holiday_textwrap {
                 display: flex;
@@ -137,7 +166,8 @@ header {
                     display: flex;
                     flex-direction: column;
                     gap: 10px;
-                    span {
+                    p {
+                        position: relative;
                         font-size: 20px;
                         font-weight: 200;
                         letter-spacing: 2px;
@@ -173,31 +203,33 @@ header {
             position: absolute;
             right: 0;
             top: 0;
-            width: 30px;
-            height: 300px;
+            width: 10px;
+            height: 500px;
             background-color: $estee-lauder--color-red;
         }
         .promotion15_inner {
             display: flex;
             flex-direction: column;
-            gap: 50px;
+            gap: 40px;
             .promotion15_titles {
                 display: flex;
                 flex-direction: column;
+                overflow: hidden;
                 span {
-                    font-size: 160px;
-                    line-height: 160px;
+                    font-size: 140px;
+                    line-height: 140px;
                     letter-spacing: 5px;
-                    font-family: "optima";
+                    font-family: "Rosarivo";
+                    font-weight: 400;
                     color: $estee-lauder--color-red;
                 }
             }
             .promotion15_contexts {
                 line-height: 40px;
-                letter-spacing: 3px;
+                letter-spacing: 1px;
                 font-size: 18px;
                 font-family: "pretendard";
-                font-weight: 200;
+                font-weight: 300;
                 p {
                     display: inline;
                 }
@@ -209,16 +241,22 @@ header {
             button {
                 width: 140px;
                 height: 57px;
-                margin-top: 50px;
+                margin-top: 80px;
+                border: 1px solid $estee-lauder--color-blue;
                 color: $estee-lauder--color-white;
                 background-color: $estee-lauder--color-blue;
-                border: none;
                 cursor: pointer;
+                transition: .3s;
+                &:hover{
+                    background-color: $estee-lauder--color-white;
+                    color: $estee-lauder--color-blue;
+                }
             }
         }
         .promotion15_imgwrap {
             width: 50%;
-            height: 960px;
+            height: 900px;
+            overflow: hidden;
             img {
                 width: 100%;
                 height: 100%;
@@ -235,6 +273,7 @@ header {
         height: auto;
         .bestseller_stickyway {
             width: 50%;
+            height: 2350px;
             position: relative;
             .bestseller_img {
                 width: 100%;
@@ -249,7 +288,7 @@ header {
                     }
                     #perfume {
                         position: absolute;
-                        bottom: 5%;
+                        bottom: 6%;
                         left: 50%;
                         width: 20%;
                         height: 30%;
@@ -313,6 +352,7 @@ header {
             .bestseller_inner2 {
                 margin-top: 300px;
                 padding: 380px 0;
+                color: $estee-lauder--color-black;
                 .bestseller_inner2_context {
                     display: flex;
                     flex-direction: column;
@@ -340,6 +380,21 @@ header {
                         font-size: 54px;
                         font-weight: 500;
                         letter-spacing: 8px;
+                    }
+                    button {
+                        margin: 70px auto 0 auto;
+                        width: 150px;
+                        height: 60px;
+                        font-family: "pretendard";
+                        cursor: pointer;
+                        border: 1px solid $estee-lauder--color-blue;
+                        color: $estee-lauder--color-white;
+                        background-color: $estee-lauder--color-blue;
+                        transition: .3s;
+                        &:hover {
+                            color: $estee-lauder--color-blue;
+                            background-color: $estee-lauder--color-white;
+                        }
                     }
                 }
             }
@@ -370,6 +425,10 @@ header {
             grid-column: 1 / 15;
             grid-row: 1 / 12;
             position: relative;
+            transition: .3s;
+            &:hover{
+                filter: brightness(1.15);
+            }
             .section4_main_textwrap {
                 position: absolute;
                 top: 70px;
@@ -388,6 +447,13 @@ header {
                     margin: 20px 0 0 5px;
                     letter-spacing: 2px;
                 }
+            }
+        }
+        .section4_item {
+            transition: .3s;
+            cursor: pointer;
+            &:hover {
+                filter: brightness(1.05);
             }
         }
         .section4_item1 {
@@ -422,24 +488,30 @@ header {
             cursor: pointer;
             color: $estee-lauder--color-white;
             background: url(../img/red1.png) no-repeat center / cover;
+            transition: .3s;
+            &:hover{
+                filter: brightness(1.15);
+            }
         }
     }
 }
 
 .centerline {
-    width: 300%;
+    width: calc(900px * 10);
     padding: 50px 0;
     background-color: $estee-lauder--color-white;
     border-top: 1px solid $estee-lauder--color-blue;
     border-bottom: 1px solid $estee-lauder--color-blue;
     display: flex;
     align-items: center;
+    margin: 200px 0;
     .linebelt {
         height: auto;
         display: flex;
-        gap: 400px;
         align-items: center;
+        animation: linemove 40s linear  infinite;
         svg {
+            margin: 0 200px;
             width: 500px;
             fill: $estee-lauder--color-blue;
         }
@@ -454,11 +526,12 @@ header {
         padding: 0 150px;
         margin: 0 auto;
         display: flex;
+        justify-content: center;
         position: relative;
         .section5_inner {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 40px;
             .section5_textwrap {
                 width: 50%;
                 display: flex;
@@ -470,14 +543,15 @@ header {
                 .section5_text_top {
                     strong {
                         font-family: "optima";
-                        font-size: 200px;
-                        line-height: 180px;
+                        font-size: 150px;
+                        line-height: 130px;
                         font-weight: 200;
                     }
                     p {
                         font-family: "pretendard";
                         font-size: 16px;
                         font-weight: 300;
+                        margin-top: 40px;
                     }
                 }
                 .section5_text_bottom {
@@ -495,11 +569,16 @@ header {
                 }
             }
             .section5_img {
-                width: 50%;
-                img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
+                width: 594px;
+                height: 680px;
+                display: flex;
+                overflow: hidden;
+                .swiper-wrapper {
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
                 }
             }
         }
@@ -510,8 +589,8 @@ header {
         .section5_decobox1 {
             top: 0;
             left: 0;
-            width: 30px;
-            height: 200px;
+            width: 20px;
+            height: 400px;
         }
         .section5_decobox2 {
             top: 0;
