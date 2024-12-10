@@ -244,15 +244,15 @@ const section3Animation = () => {
         },
         transform: "rotate(-25deg)",
     });
-    gsap.to(".section3", {
-        scrollTrigger: {
-            trigger: ".section3",
-            start: "center center",
-            end: "80% 80%",
-            scrub: true,
-        },
-        backgroundColor: "#ffffff",
-    });
+    // gsap.to(".section3", {
+    //     scrollTrigger: {
+    //         trigger: ".section3",
+    //         start: "center center",
+    //         end: "80% 80%",
+    //         scrub: true,
+    //     },
+    //     backgroundColor: "#ffffff",
+    // });
     showLetters();
     /* 가격 클릭 */
     const perfumeprices = document.querySelectorAll(".perfumeprice");
@@ -271,10 +271,31 @@ const section3Animation = () => {
     }
 };
 
+
+
+
+var aerinswiper = new Swiper(".mySwiper", {
+    autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+    },
+    speed: 1000,
+    loop: true,
+    pagination: {
+        el: ".swiper-pagination",
+        dynamicBullets: true,
+    },
+});
+
+aerinswiper.on("slideChange", function () {
+    const aerinimages = document.querySelectorAll(".aerinimg");
+    let currentIndex = aerinswiper.realIndex;
+    console.log(aerinimages[currentIndex]);
+});
 const section5Animation = () => {
     gsap.from(".section5_decobox1", {
         scrollTrigger: {
-            trigger: ".section5_container",
+            trigger: ".section5",
             start: "10% bottom",
             end: "bottom bottom",
             scrub: true,
@@ -283,24 +304,12 @@ const section5Animation = () => {
     });
     gsap.to(".section5_decobox2", {
         scrollTrigger: {
-            trigger: ".section5_container",
+            trigger: ".section5",
             start: "10% bottom",
             end: "bottom bottom",
             scrub: true,
         },
         transform: "rotate(90deg)",
-    });
-
-    var swiper = new Swiper(".mySwiper", {
-        autoplay:{
-            delay:5000,
-        },
-        speed:1000,
-        loop:true,
-        pagination: {
-            el: ".swiper-pagination",
-            dynamicBullets: true,
-        },
     });
 };
 const initAnimations = () => {

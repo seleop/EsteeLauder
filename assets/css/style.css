@@ -387,7 +387,7 @@ header .header_inner .user_panel span {
 .section3 .bestseller_container .bestseller_innerwrap .bestseller_inner2 {
   margin-top: 300px;
   padding: 380px 0;
-  color: #040404;
+  color: #fff;
 }
 .section3 .bestseller_container .bestseller_innerwrap .bestseller_inner2 .bestseller_inner2_context {
   display: flex;
@@ -424,18 +424,18 @@ header .header_inner .user_panel span {
   height: 60px;
   font-family: "pretendard";
   cursor: pointer;
-  border: 1px solid #040A2B;
-  color: #fff;
-  background-color: #040A2B;
+  border: 1px solid #fff;
+  color: #040A2B;
+  background-color: #fff;
   transition: 0.3s;
 }
 .section3 .bestseller_container .bestseller_innerwrap .bestseller_inner2 .bestseller_inner2_context button:hover {
-  color: #040A2B;
-  background-color: #fff;
+  color: #fff;
+  background-color: #040A2B;
 }
 
 .section4 {
-  padding: 210px;
+  padding: 200px 0;
 }
 .section4 .section4_gridcontainer {
   width: 1520px;
@@ -537,7 +537,6 @@ header .header_inner .user_panel span {
   border-bottom: 1px solid #040A2B;
   display: flex;
   align-items: center;
-  margin: 200px 0;
 }
 .centerline .linebelt {
   height: auto;
@@ -557,30 +556,38 @@ header .header_inner .user_panel span {
 }
 .section5 .section5_container {
   width: 1520px;
-  padding: 0 150px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   position: relative;
 }
 .section5 .section5_container .section5_inner {
+  width: auto;
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 50px;
 }
 .section5 .section5_container .section5_inner .section5_textwrap {
-  width: 50%;
+  margin-left: 150px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 200px;
+  gap: 60px;
+  align-items: flex-end;
   text-align: end;
   color: #040A2B;
 }
+.section5 .section5_container .section5_inner .section5_textwrap button {
+  width: 150px;
+  height: 60px;
+  border: 1px solid #040A2B;
+  color: #fff;
+  background-color: #040A2B;
+}
 .section5 .section5_container .section5_inner .section5_textwrap .section5_text_top strong {
   font-family: "optima";
-  font-size: 150px;
-  line-height: 130px;
+  font-size: 180px;
+  line-height: 180px;
   font-weight: 200;
 }
 .section5 .section5_container .section5_inner .section5_textwrap .section5_text_top p {
@@ -588,6 +595,9 @@ header .header_inner .user_panel span {
   font-size: 16px;
   font-weight: 300;
   margin-top: 40px;
+}
+.section5 .section5_container .section5_inner .section5_textwrap .section5_text_bottom {
+  margin-top: 100px;
 }
 .section5 .section5_container .section5_inner .section5_textwrap .section5_text_bottom h2 {
   font-family: "pretendard";
@@ -602,7 +612,6 @@ header .header_inner .user_panel span {
 }
 .section5 .section5_container .section5_inner .section5_img {
   width: 594px;
-  height: 680px;
   display: flex;
   overflow: hidden;
 }
