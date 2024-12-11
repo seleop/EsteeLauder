@@ -428,7 +428,6 @@ const section8Animation = () => {
             start:"bottom bottom",
             end:"500%",
             scrub:true,
-            markers:true,
         }
     })
     section8tl
