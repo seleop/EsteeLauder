@@ -270,28 +270,27 @@ const section3Animation = () => {
         });
     }
 };
-
-
-
-
-var aerinswiper = new Swiper(".mySwiper", {
-    autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-    },
-    speed: 1000,
-    loop: true,
-    pagination: {
-        el: ".swiper-pagination",
-        dynamicBullets: true,
-    },
-});
-
-aerinswiper.on("slideChange", function () {
-    const aerinimages = document.querySelectorAll(".aerinimg");
-    let currentIndex = aerinswiper.realIndex;
-    console.log(aerinimages[currentIndex]);
-});
+const section4Animation = () => {
+    document.addEventListener('DOMContentLoaded', () => {
+        let target = gsap.utils.toArray(".section4_grid_contents");
+        target.forEach((ele) => {
+            gsap.from(ele, {
+                scrollTrigger: {
+                    trigger: ele,
+                    start: "top bottom",
+                    end: "bottom bottom",
+                    scrub: true,
+                },
+                onStart:()=>{
+                    console.log("start")
+                },
+                y: 50,
+                scale: 0.95,
+                stagger: 0.5,
+            });
+        });
+    })
+};
 const section5Animation = () => {
     gsap.from(".section5_decobox1", {
         scrollTrigger: {
@@ -311,7 +310,169 @@ const section5Animation = () => {
         },
         transform: "rotate(90deg)",
     });
+
+    gsap.from(".section5_text_top > span", {
+        scrollTrigger:{
+            trigger:".section5_container",
+            start:"10% bottom",
+            end :"center bottom",
+            scrub:true,
+        },
+        x : 100,
+        autoAlpha:0,
+        stagger:0.2
+    })
+    gsap.from(".section5_img", {
+        scrollTrigger:{
+            trigger:".section5_container",
+            start:"10% bottom",
+            end :"bottom bottom",
+            scrub:true,
+        },
+        yPercent : 100,
+        ease:"power2.out",
+        autoAlpha:0,
+    })
+    var aerinswiper = new Swiper(".mySwiper", {
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        speed: 1000,
+        loop: true,
+        pagination: {
+            el: ".swiper-pagination",
+            dynamicBullets: true,
+        },
+    });
+
+    aerinswiper.on("slideChange", function () {
+        const aerintitle = ["로즈 드 그라스 조이풀 브룸", "로즈 드 그라스 퍼퓸 & 뿌르 퓌", "이캇 자스민", "라일락 패스"];
+        const aerintext = [
+            "달콤한 핑크빛 인디안 로즈와 싱그럽고 모던한 로즈 센티폴리아의 조합으로 <br>두배의 행복을 담은 조이풀 블룸.",
+            "100장의 꽃잎으로 알려진 센티폴리아 로즈를 담은 정교한 로즈 향수와 <br>싱그러운 아침 장미향을 떠오르게 하는 특별한 향수를 경험해보세요.",
+            "편안하면서도 시크한 데님을 연상시키는 플로랄 우디 계열의 향수",
+            "봄날의 라일락을 연상시키게 하는 플로랄 그린 계열의 향수",
+        ];
+        let currentIndex = aerinswiper.realIndex;
+        document.querySelector(".section5_text_bottom > h2").innerHTML = aerintitle[currentIndex];
+        document.querySelector(".section5_text_bottom > p").innerHTML = aerintext[currentIndex];
+    });
 };
+const section6Animation = () => {
+    var swiper = new Swiper(".Nutrivswiper", {
+        loop : true,
+        autoplay : {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        slidesPerView: 5,
+        spaceBetween: 30,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
+    const buttons = document.querySelectorAll(".section6_categories > span");
+    for(let i = 0 ; i < buttons.length ; i++) {
+        buttons[i].addEventListener('click', () => {
+            buttons.forEach((ele)=>{
+                ele.classList.remove('active');
+            })
+            buttons[i].classList.add('active');
+        })
+    }
+    scrollBtn(".section6_inner > button");
+};
+const section7Animation = () => {
+    const titles = new SplitType('.section6_title > strong', {
+        type : "chars",
+    });
+    const subtitles = new SplitType('.section6_title > p', {
+        type : "chars",
+    })
+    gsap.from(titles.chars, {
+        scrollTrigger : {
+            trigger : ".section6_inner",
+            start :"10% bottom",
+            end : "30% bottom",
+            scrub:true,
+        },
+        stagger : 0.3,
+        y : 30,
+        autoAlpha : 0
+    })
+    gsap.from(subtitles.chars, {
+        scrollTrigger : {
+            trigger : ".section6_inner",
+            start :"30% bottom",
+            end : "center bottom",
+            scrub:true,
+        },
+        stagger : 0.1,
+        y : 20,
+        autoAlpha : 0
+    })
+}
+const section8Animation = () => {
+    ScrollTrigger.create({
+        trigger: ".section7_inner",
+        start: "bottom bottom",
+        end: "500%",
+        pin: true,
+        pinSpacing: true,
+    });
+    let section8tl = gsap.timeline({
+        scrollTrigger:{
+            trigger:".section7_inner",
+            start:"bottom bottom",
+            end:"500%",
+            scrub:true,
+            markers:true,
+        }
+    })
+    section8tl
+        .to('.section7_grid', {y:-160, duration:2})
+        .to('.section7_grid', {x : `-${document.querySelector('.section7_grid').offsetWidth}`, duration:9})
+
+    gsap.to('.section7_grid_item_img', {
+        scrollTrigger:{
+            trigger:".section7_inner",
+            start:"bottom bottom",
+            end:"+=100%",
+            scrub:true,
+        },
+        height: "460px",
+    })
+
+    gsap.to('.section7_grid_item_img', {
+        scrollTrigger:{
+            trigger:".section7_inner",
+            start:"bottom bottom",
+            end:"+=130%",
+            scrub:true,
+        },
+        width: "380px",
+    })
+
+    gsap.to('.section7_grid_item_img > img', {
+        scrollTrigger:{
+            trigger:".section7_inner",
+            start:"bottom bottom",
+            end:"+=130%",
+            scrub:true,
+        },
+        filter : "grayscale(0.5)"
+    })
+
+    window.addEventListener('scroll', () => {
+        if ( window.scrollY >10500){
+            document.querySelector('.section7_title').classList.add('active')
+        } else {
+            document.querySelector('.section7_title').classList.remove('active')
+        }
+    })
+}
 const initAnimations = () => {
     scrollSmooth();
     modifyHeader();
@@ -319,7 +480,11 @@ const initAnimations = () => {
     actionHolidayText();
     section2Animation();
     section3Animation();
+    // section4Animation();
     section5Animation();
+    section6Animation();
+    section7Animation();
+    section8Animation();
 };
 observer.observe(document.querySelector("#bannervideo"));
 initAnimations();

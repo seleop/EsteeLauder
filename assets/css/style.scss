@@ -522,16 +522,18 @@ header {
     padding: 200px 0 ;
     .section5_container {
         width: $inner-container-width;
+        height: 820px;
         margin: 0 auto;
         display: flex;
         justify-content: center;
         position: relative;
         .section5_inner {
-            width: auto;
+            width: 80%;
             display: flex;
             justify-content: center;
-            gap: 50px;
+            gap: 30px;
             .section5_textwrap {
+                width: calc(100% - 594px);
                 margin-left: 150px;
                 display: flex;
                 flex-direction: column;
@@ -540,15 +542,23 @@ header {
                 align-items: flex-end;
                 text-align: end;
                 color: $estee-lauder--color-blue;
+                overflow: hidden;
                 button {
                     width: 150px;
                     height: 60px;
                     border: 1px solid $estee-lauder--color-blue;
                     color: $estee-lauder--color-white;
+                    cursor: pointer;
+                    transition: .3s;
                     background-color: $estee-lauder--color-blue;
+                    &:hover{
+                        color: $estee-lauder--color-blue;
+                        background-color: $estee-lauder--color-white;
+                    }
                 }
                 .section5_text_top {
-                    strong {
+                    span {
+                        display: block;
                         font-family: "optima";
                         font-size: 180px;
                         line-height: 180px;
@@ -577,7 +587,8 @@ header {
                 }
             }
             .section5_img {
-                width: 594px;
+                width: 593px;
+                height: 820px;
                 display: flex;
                 overflow: hidden;
                 .swiper-wrapper {
@@ -620,7 +631,7 @@ header {
     .section6_inner {
         width: $inner-container-width;
         margin: 0 auto;
-        overflow-x: hidden;
+        overflow: hidden;
         .section6_title {
             color: $estee-lauder--color-blue;
             strong {
@@ -648,7 +659,6 @@ header {
                 cursor: pointer;
                 color: $estee-lauder--color-darkgray;
                 &.active {
-                    width: 60px;
                     height: 30px;
                     color: $estee-lauder--color-red;
                     font-size: 20px;
@@ -658,41 +668,44 @@ header {
             }
         }
         .section6_itemwrap {
-            width: 200%;
+            width: 100%;
             margin-top: 20px;
             display: flex;
             gap: 20px;
-            .section6_item {
-                width: 286px;
-                .section6_item_img {
-                    width: 100%;
-                    height: 332px;
-                    img {
+            .swiper-wrapper{
+                width: 100%;
+                .section6_item {
+                    width: 286px;
+                    .section6_item_img {
                         width: 100%;
-                        height: 100%;
-                        object-fit: cover;
+                        height: 332px;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
                     }
-                }
-                .section6_item_texts {
-                    padding: 20px 6px;
-                    background-color: $estee-lauder--color-white;
-                    color: $estee-lauder--color-darkgray;
-                    h3 {
-                        font-family: "rora";
-                        font-size: 14px;
-                        font-weight: 500;
-                        margin-bottom: 5px;
-                    }
-                    p {
-                        font-family: "pretendard";
-                        font-weight: 500;
-                        font-size: 16px;
-                        margin-bottom: 12px;
-                    }
-                    span {
-                        font-family: "rora";
-                        font-size: 14px;
-                        font-weight: 500;
+                    .section6_item_texts {
+                        padding: 20px 6px;
+                        background-color: $estee-lauder--color-white;
+                        color: $estee-lauder--color-darkgray;
+                        h3 {
+                            font-family: "rora";
+                            font-size: 14px;
+                            font-weight: 500;
+                            margin-bottom: 5px;
+                        }
+                        p {
+                            font-family: "pretendard";
+                            font-weight: 500;
+                            font-size: 16px;
+                            margin-bottom: 12px;
+                        }
+                        span {
+                            font-family: "rora";
+                            font-size: 14px;
+                            font-weight: 500;
+                        }
                     }
                 }
             }
@@ -703,9 +716,14 @@ header {
             height: 60px;
             color: $estee-lauder--color-white;
             background-color: $estee-lauder--color-blue;
-            border: none;
+            border: 1px solid $estee-lauder--color-blue;
             cursor: pointer;
             margin: 100px auto 0 auto;
+            transition: .3s;
+            &:hover {
+                color: $estee-lauder--color-blue;
+                background-color: $estee-lauder--color-white;
+            }
         }
     }
 }
@@ -714,10 +732,13 @@ header {
     padding: 200px 0;
     .section7_inner {
         width: 100%;
+        height: auto;
         color: $estee-lauder--color-blue;
         .section7_title {
             text-align: center;
+            opacity: 1;
             strong {
+                overflow: hidden;
                 font-size: 64px;
                 font-family: "optima";
                 font-weight: 300;
@@ -728,23 +749,34 @@ header {
                 font-family: "pretendard";
                 font-weight: 300;
             }
+            &.active {
+                opacity: 0;
+            }
         }
         .section7_grid {
-            width: 100%;
+            width: auto;
             margin-top: 40px;
-            overflow: hidden;
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
+            grid-template-columns: repeat(10, 1fr);
             grid-template-rows: repeat(2, 1fr);
+            background-color: $estee-lauder--color-white;
             gap: 5px;
             .section7_grid_item {
+                width: auto;
                 .section7_grid_item_img {
-                    width: 100%;
-                    height: 100%;
+                    width: 185px;
+                    height: 360px;
+                    overflow: hidden;
                     img {
                         width: 100%;
                         height: 100%;
                         object-fit: cover;
+                        filter: grayscale(1);
+                        transition: .3s;
+                        &:hover{
+                            filter: grayscale(0) !important;
+                            transform: scale(1.03);
+                        }
                     }
                 }
             }
