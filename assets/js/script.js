@@ -91,8 +91,8 @@ const scrollBtn = (button) => {
     gsap.from(`${button}`, {
         scrollTrigger: {
             trigger: `${button}`,
-            start: "bottom bottom",
-            end: "+=70px bottom",
+            start: "top bottom",
+            end: "top 90%",
             scrub: true,
         },
         ease: "none",
@@ -101,79 +101,7 @@ const scrollBtn = (button) => {
     });
 };
 
-const showLetters = () => {
-    const bestseller1 = new SplitType("#bestsellertitle", {
-        type: "chars",
-    });
-    gsap.from(bestseller1.chars, {
-        scrollTrigger: {
-            trigger: ".bestseller_inner1",
-            start: "35% bottom",
-            end: "+=200px bottom",
-            scrub: true,
-        },
-        y: 50,
-        autoAlpha: 0,
-        ease: "power1.out",
-        stagger: {
-            amount: 0.2,
-        },
-    });
-    const bestseller2 = new SplitType(".bestseller_inner1_context > h3", {
-        type: "chars",
-    });
-    gsap.from(bestseller2.chars, {
-        scrollTrigger: {
-            trigger: ".bestseller_inner1",
-            start: "45% bottom",
-            end: "+=200px bottom",
-            scrub: true,
-        },
-        y: 50,
-        autoAlpha: 0,
-        ease: "power1.out",
-        stagger: {
-            amount: 0.4,
-        },
-    });
-    const bestseller3 = new SplitType("#perfume_pricetag", {
-        type: "chars",
-    });
-    gsap.from(bestseller3.chars, {
-        scrollTrigger: {
-            trigger: ".bestseller_inner1",
-            start: "65% bottom",
-            end: "+=200px bottom",
-            scrub: true,
-        },
-        y: 50,
-        autoAlpha: 0,
-        ease: "power1.out",
-        stagger: {
-            amount: 0.6,
-        },
-    });
-    gsap.from(".bestseller_pricespan", {
-        scrollTrigger: {
-            trigger: ".bestseller_inner1",
-            start: "70% bottom",
-            end: "+=200px bottom",
-            scrub: true,
-        },
-        autoAlpha: 0,
-        ease: "power1.out",
-    });
-    gsap.from(".bestseller_inner1_context > a", {
-        scrollTrigger: {
-            trigger: ".bestseller_inner1",
-            start: "80% bottom",
-            end: "+=100px bottom",
-            scrub: true,
-        },
-        autoAlpha: 0,
-        ease: "power1.out",
-    });
-};
+
 const section1Animation = () => {
     actionHolidayText();
     scrollBtn(".holiday_textwrap > button");
@@ -226,34 +154,99 @@ const section2Animation = () => {
     scrollBtn(".promotion15_inner > button");
 };
 const section3Animation = () => {
-    gsap.to("#IU", {
-        scrollTrigger: {
-            trigger: ".bestseller_stickyway",
-            start: "top top",
-            end: "center center",
-            scrub: true,
-        },
-        autoAlpha: 0,
-        ease: "power1.in",
-    });
-    gsap.to("#perfume", {
-        scrollTrigger: {
-            trigger: ".bestseller_stickyway",
-            start: "center center",
-            scrub: true,
-        },
-        transform: "rotate(-25deg)",
-    });
-    // gsap.to(".section3", {
-    //     scrollTrigger: {
-    //         trigger: ".section3",
-    //         start: "center center",
-    //         end: "80% 80%",
-    //         scrub: true,
-    //     },
-    //     backgroundColor: "#ffffff",
-    // });
-    showLetters();
+    if(window.innerWidth === 1920){
+        gsap.to("#IU", {
+            scrollTrigger: {
+                trigger: ".bestseller_stickyway",
+                start: "top top",
+                end: "center center",
+                scrub: true,
+            },
+            autoAlpha: 0,
+            ease: "power1.in",
+        });
+        gsap.to("#perfume", {
+            scrollTrigger: {
+                trigger: ".bestseller_stickyway",
+                start: "center center",
+                scrub: true,
+            },
+            transform: "rotate(-25deg)",
+        });
+    }
+    const showLetters = () => {
+        const bestseller1 = new SplitType("#bestsellertitle", {
+            type: "chars",
+        });
+        gsap.from(bestseller1.chars, {
+            scrollTrigger: {
+                trigger: ".bestseller_inner1",
+                start: "35% bottom",
+                end: "+=200px bottom",
+                scrub: true,
+            },
+            y: 50,
+            autoAlpha: 0,
+            ease: "power1.out",
+            stagger: {
+                amount: 0.2,
+            },
+        });
+        const bestseller2 = new SplitType(".bestseller_inner1_context > h3", {
+            type: "chars",
+        });
+        gsap.from(bestseller2.chars, {
+            scrollTrigger: {
+                trigger: ".bestseller_inner1",
+                start: "45% bottom",
+                end: "+=200px bottom",
+                scrub: true,
+            },
+            y: 50,
+            autoAlpha: 0,
+            ease: "power1.out",
+            stagger: {
+                amount: 0.4,
+            },
+        });
+        const bestseller3 = new SplitType("#perfume_pricetag", {
+            type: "chars",
+        });
+        gsap.from(bestseller3.chars, {
+            scrollTrigger: {
+                trigger: ".bestseller_inner1",
+                start: "65% bottom",
+                end: "+=200px bottom",
+                scrub: true,
+            },
+            y: 50,
+            autoAlpha: 0,
+            ease: "power1.out",
+            stagger: {
+                amount: 0.6,
+            },
+        });
+        gsap.from(".bestseller_pricespan", {
+            scrollTrigger: {
+                trigger: ".bestseller_inner1",
+                start: "70% bottom",
+                end: "+=200px bottom",
+                scrub: true,
+            },
+            autoAlpha: 0,
+            ease: "power1.out",
+        });
+        gsap.from(".bestseller_inner1_context > a", {
+            scrollTrigger: {
+                trigger: ".bestseller_inner1",
+                start: "80% bottom",
+                end: "+=100px bottom",
+                scrub: true,
+            },
+            autoAlpha: 0,
+            ease: "power1.out",
+        });
+    };
     /* 가격 클릭 */
     const perfumeprices = document.querySelectorAll(".perfumeprice");
     for (let i = 0; i < perfumeprices.length; i++) {
@@ -269,6 +262,7 @@ const section3Animation = () => {
             }
         });
     }
+    showLetters();
 };
 const section4Animation = () => {
     document.addEventListener('DOMContentLoaded', () => {

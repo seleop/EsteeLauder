@@ -1,7 +1,7 @@
 @import "./variables";
 @import "./font-face";
 @import "./keyframes";
-
+@import "./mixin";
 * {
     margin: 0;
     padding: 0;
@@ -28,7 +28,7 @@ header {
     position: fixed;
     top: 0;
     z-index: 1000;
-    padding: 0 100px;
+    padding: 0 5vw;
     background-color: transparent;
     border-bottom: 1px solid $estee-lauder--color-white;
     transition: .3s;
@@ -44,7 +44,7 @@ header {
         justify-content: space-between;
         align-items: center;
         .logo {
-            width: 307px;
+            width: clamp(200px, 10vw, 10vw);
             height: 38px;
             svg {
                 width: 100%;
@@ -55,10 +55,10 @@ header {
         nav {
             ul {
                 display: flex;
-                gap: 45px;
+                gap: 3vw;
                 li {
                     font-weight: 600;
-                    font-size: 16px;
+                    font-size: clamp(14px, 1vw, 1.1vw);
                     position: relative;
                     &::before{
                         content: '';
@@ -82,9 +82,9 @@ header {
         }
         .user_panel {
             display: flex;
-            gap: 20px;
+            gap: 1vw;
             span {
-                font-size: 16px;
+                font-size: 14px;
             }
         }
     }
@@ -105,17 +105,18 @@ header {
         color: $estee-lauder--color-white;
         font-family: "pretendard";
         text-shadow: 0 0 5px #000;
-        p:first-child {
+        h2 {
             font-size: 16px;
             font-weight: 600;
         }
         p:last-child {
-            font-size: 20px;
-            line-height: 32px;
+            font-size: clamp(20px, 1.2vw, 1.2vw);
+            line-height: clamp(28px, 1.5vw, 1.5vw);
         }
         .videosection_svg {
             margin-bottom: 15px;
             svg {
+                width: clamp(25vw, 35vw, 550px);
                 fill: $estee-lauder--color-white;
             }
         }
@@ -126,18 +127,26 @@ header {
         object-fit: cover;
     }
 }
+@include desktop {
+    .section1 {
+        height: 680px;
+    }
+}
+
 
 .section2 {
-    padding: 160px 200px;
+    padding: 160px 10vw;
     display: flex;
     flex-direction: column;
     gap: 70px;
     .holiday_blockbuster {
         position: relative;
+        height: clamp(750px,50vw, 70vw);
         .holiday_inner {
             position: absolute;
-            top: 40%;
+            top: 50%;
             right: 5%;
+            transform: translateY(-50%);
             font-family: "pretendard";
             color: $estee-lauder--color-white;
             button {
@@ -157,19 +166,21 @@ header {
             .holiday_textwrap {
                 display: flex;
                 flex-direction: column;
+                align-items: center;
+                justify-content: center;
                 gap: 40px;
                 h2 {
-                    font-size: 38px;
+                    font-size: clamp(20px, 2vw, 2vw);
                     font-weight: bold;
+                    text-shadow: 0px 0px 2px $estee-lauder--color-black;
                 }
                 .holiday_textwrap_sub {
                     display: flex;
                     flex-direction: column;
                     gap: 10px;
                     p {
-                        position: relative;
-                        font-size: 20px;
-                        font-weight: 200;
+                        font-size: clamp(16px, 1.2vw, 1.2vw);
+                        font-weight: 400;
                         letter-spacing: 2px;
                         color: $estee-lauder--color-white;
                         text-align: center;
@@ -203,21 +214,22 @@ header {
             position: absolute;
             right: 0;
             top: 0;
-            width: 10px;
-            height: 500px;
+            width: 0.2vw;
+            height: clamp(300px, 30vh, 30vh);
             background-color: $estee-lauder--color-red;
         }
         .promotion15_inner {
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
             gap: 40px;
             .promotion15_titles {
                 display: flex;
                 flex-direction: column;
                 overflow: hidden;
                 span {
-                    font-size: 140px;
-                    line-height: 140px;
+                    font-size: clamp(50px, 7vw, 7vw);
+                    line-height: clamp(50px, 7vw, 7vw);
                     letter-spacing: 5px;
                     font-family: "Rosarivo";
                     font-weight: 400;
@@ -227,21 +239,21 @@ header {
             .promotion15_contexts {
                 line-height: 40px;
                 letter-spacing: 1px;
-                font-size: 18px;
-                font-family: "pretendard";
-                font-weight: 300;
                 p {
                     display: inline;
+                    font-size: clamp(14px, 1.2vw, 1.2vw);
+                    font-family: "pretendard";
+                    font-weight: 300;
                 }
                 span {
                     color: $estee-lauder--color-red;
+                    font-size: clamp(14px, 1.2vw, 1.2vw);
                     font-weight: 500;
                 }
             }
             button {
                 width: 140px;
                 height: 57px;
-                margin-top: 80px;
                 border: 1px solid $estee-lauder--color-blue;
                 color: $estee-lauder--color-white;
                 background-color: $estee-lauder--color-blue;
@@ -255,7 +267,7 @@ header {
         }
         .promotion15_imgwrap {
             width: 50%;
-            height: 900px;
+            height: clamp(700px, 42vw, 42vw);
             overflow: hidden;
             img {
                 width: 100%;
@@ -270,21 +282,23 @@ header {
     background-color: $estee-lauder--color-black;
     .bestseller_container {
         display: flex;
-        height: auto;
         .bestseller_stickyway {
             width: 50%;
             height: 2350px;
             position: relative;
             .bestseller_img {
                 width: 100%;
-                top: -110px;
+                top: -100px;
                 position: sticky;
                 .bestseller_imgwrap {
                     position: relative;
+                    width: 100%;
+                    height: 100%;
                     img {
                         width: 100%;
                         height: 100%;
                         object-fit: cover;
+                        object-position: right;
                     }
                     #perfume {
                         position: absolute;
@@ -327,19 +341,19 @@ header {
                     }
                     h2 {
                         font-family: "cinzel";
-                        font-size: 22px;
+                        font-size: clamp(18px, 1.4vw, 1.4vw);
                         font-weight: bold;
                         letter-spacing: 14px;
                     }
                     h3 {
                         font-family: "rora";
-                        font-size: 48px;
+                        font-size: clamp(24px, 2.4vw, 2.4vw);
                         letter-spacing: 10px;
                         font-weight: 200;
                     }
                     span {
                         font-family: "rora";
-                        font-size: 24px;
+                        font-size: clamp(16px, 1.2vw, 1.2vw);
                         letter-spacing: 8px;
                         font-weight: 200;
                         margin-top: 50px;
@@ -401,6 +415,42 @@ header {
         }
     }
 }
+@include fullDesktop {
+    .section3 {
+        width: 100%;
+        height: 100vh;
+        opacity: hidden;
+        .bestseller_container {
+            width: 100%;
+            height: 100%;
+            .bestseller_innerwrap{
+                display: flex;
+                align-items: center;
+            }
+            .bestseller_inner1 {
+                padding: 0 !important;
+            }
+            .bestseller_stickyway {
+                height: 100%;
+                .bestseller_img {
+                    width: 100%;
+                    height: 100%;
+                    position: static;
+                }
+            }
+        }
+        .bestseller_img {
+            position: static;
+        }
+        #perfume {
+            display: none;
+        }
+    }    
+    .bestseller_inner2 {
+        display: none;
+    }
+}
+
 
 .section4 {
     padding: 200px 0;
@@ -450,10 +500,47 @@ header {
             }
         }
         .section4_item {
+            position: relative;
             transition: .3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             cursor: pointer;
+            .section4_item_text{
+                position: absolute;
+                font-family: "pretendard";
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: .6rem;
+                transition: .3s;
+                opacity: 0;
+                p {
+                    padding: 0 0.6rem;
+                }
+                span {
+                    margin-top: 1.6rem;
+                    font-weight: 800;
+                }
+            }
             &:hover {
                 filter: brightness(1.05);
+            }
+            &::before{
+                content: '';
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                height: 0%;
+                background-color: #f7f7f7c4;
+                transition: .3s;
+            }
+            &:hover::before {
+                height: 100%;
+            }
+            &:hover .section4_item_text {
+                opacity: 1;
             }
         }
         .section4_item1 {

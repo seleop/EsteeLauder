@@ -1,0 +1,34 @@
+@import "./variables";
+
+@mixin fullDesktop {
+    @media (max-width : $breakpoint-fulldesktop) {
+        @content
+    }
+};
+/* 1280px */
+@mixin desktop {
+    @media (max-width : $breakpoint-desktop) {
+        @content
+    }
+};
+
+/* 1024px */
+@mixin laptop {
+    @media (max-width : $breakpoint-laptap) {
+        @content
+    }
+};
+
+/* 768px */
+@mixin tablet {
+    @media (max-width : $breakpoint-tablet) {
+        @content
+    }
+};
+
+/* 335px */
+@mixin tablet {
+    @media (max-width : $breakpoint-mobile) {
+        @content
+    }
+}
